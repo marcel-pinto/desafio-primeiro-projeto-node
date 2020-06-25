@@ -24,7 +24,7 @@ class TransactionsRepository {
 
   public getBalance(): Balance {
     const balance: Balance = this.transactions.reduce(
-      (acc, val) => {
+      (acc: Balance, val: Transaction) => {
         acc[val.type] += val.value;
         return acc;
       },
